@@ -58,32 +58,22 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-//#define B1_Pin GPIO_PIN_13
-//#define B1_GPIO_Port GPIOC
-//#define SPI2_CS_Pin GPIO_PIN_1
-//#define SPI2_CS_GPIO_Port GPIOC
 #define USART_TX_Pin GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA
 #define USART_RX_Pin GPIO_PIN_3
 #define USART_RX_GPIO_Port GPIOA
-//#define LD2_Pin GPIO_PIN_5
-//#define LD2_GPIO_Port GPIOA
-//#define winc_EN_Pin GPIO_PIN_1
-//#define winc_EN_GPIO_Port GPIOB
-//#define winc_WAKE_Pin GPIO_PIN_13
-//#define winc_WAKE_GPIO_Port GPIOB
-//#define winc_RST_Pin GPIO_PIN_14
-//#define winc_RST_GPIO_Port GPIOB
-//#define winc_IRQ_Pin GPIO_PIN_15
-//#define winc_IRQ_GPIO_Port GPIOB
+
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
-/* USER CODE BEGIN Private defines */
 
+/* USER CODE BEGIN Private defines */
+#define MAIN_WLAN_SSID        "DIAS" /* < Destination SSID */
+#define MAIN_WLAN_AUTH        M2M_WIFI_SEC_WPA_PSK /* < Security manner */
+#define MAIN_WLAN_PSK         "diaspass" /* < Password for Destination SSID */
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

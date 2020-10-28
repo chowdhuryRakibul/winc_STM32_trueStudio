@@ -83,6 +83,16 @@ extern SPI_HandleTypeDef hspi2;
 #define SPI_WIFI_CS_PORT				GPIOC
 #define SPI_WIFI_CS_PIN					GPIO_PIN_1
 
+#define SPI_WIFI_MISO_PIN				GPIO_PIN_2
+#define SPI_WIFI_MISO_PORT				GPIOC
+
+#define SPI_WIFI_MOSI_PIN				GPIO_PIN_3
+#define SPI_WIFI_MOSI_PORT				GPIOC
+
+#define SPI_WIFI_SCK_PIN				GPIO_PIN_10
+#define SPI_WIFI_SCK_PORT				GPIOB
+
+
 /** SPI clock. */
 #define CONF_WINC_SPI_CLOCK				(12000000)
 

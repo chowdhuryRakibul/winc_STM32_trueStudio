@@ -92,6 +92,38 @@ static sint8 spi_rw(uint8* pu8Mosi, uint8* pu8Miso, uint16 u16Sz)
 }
 #endif
 
+
+void nm_bus_wifi_spi_init(SPI_HandleTypeDef *hspi)
+{
+	/* Peripheral clock enable */
+	__HAL_RCC_SPI2_CLK_ENABLE();
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+	__HAL_RCC_GPIOB_CLK_ENABLE();
+
+	GPIO_InitTypeDef  GPIO_InitStruct = {0};
+
+	GPIO_InitStruct.Pin = SPI_WIFI_MISO_PIN;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
+	HAL_GPIO_Init(SPI_WIFI_MISO_PORT, &GPIO_InitStruct);
+
+	GPIO_InitStruct.Pin = SPI_WIFI_MOSI_PIN;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
+	HAL_GPIO_Init(SPI_WIFI_MOSI_PORT, &GPIO_InitStruct);
+
+	GPIO_InitStruct.Pin = SPI_WIFI_SCK_PIN;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
+	HAL_GPIO_Init(SPI_WIFI_SCK_PORT, &GPIO_InitStruct);
+}
+
 /*
 *	@fn		nm_bus_init
 *	@brief	Initialize the bus wrapper
@@ -102,6 +134,7 @@ sint8 nm_bus_init(void *pvinit)
 	sint8 result = M2M_SUCCESS;
 	nm_bsp_reset();
 	nm_bsp_sleep(1);
+
 
 	/* Structure for SPI configuration. */
 //	struct spi_config config;
@@ -130,7 +163,7 @@ sint8 nm_bus_init(void *pvinit)
 //	/* Enable the SPI master. */
 //	spi_enable(&master);
 
-
+	HAL_SPI_MspInit(&hspi2);
 	return result;
 }
 

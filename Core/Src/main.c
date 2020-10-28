@@ -41,9 +41,7 @@
 static uint8_t scan_request_index = 0;
 /** Number of APs found. */
 static uint8_t num_founded_ap = 0;
-#define MAIN_WLAN_SSID        "DIAS" /* < Destination SSID */
-#define MAIN_WLAN_AUTH        M2M_WIFI_SEC_WPA_PSK /* < Security manner */
-#define MAIN_WLAN_PSK         "diaspass" /* < Password for Destination SSID */
+
 
 //SPI_HandleTypeDef hspi2;
 
