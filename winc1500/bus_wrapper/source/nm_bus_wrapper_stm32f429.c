@@ -100,33 +100,9 @@ static sint8 spi_rw(uint8* pu8Mosi, uint8* pu8Miso, uint16 u16Sz)
 sint8 nm_bus_init(void *pvinit)
 {
 	sint8 result = M2M_SUCCESS;
+	nm_bsp_reset();
+	nm_bsp_sleep(1);
 
-#ifdef CONF_WINC_USE_I2C
-	/* Initialize config structure and software module. */
-	struct i2c_master_config config_i2c_master;
-	i2c_master_get_config_defaults(&config_i2c_master);
-
-	/* Change buffer timeout to something longer. */
-	config_i2c_master.buffer_timeout = 1000;
-
-	/* Initialize and enable device with config. */
-	i2c_master_init(&i2c_master_instance, SERCOM2, &config_i2c_master);
-
-	i2c_master_enable(&i2c_master_instance);
-
-#elif defined CONF_WINC_USE_SPI
-//	hspi1.Instance = SPI1;
-//  hspi1.Init.Mode = SPI_MODE_MASTER;
-//  hspi1.Init.Direction = SPI_DIRECTION_2LINES;
-//  hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
-//  hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-//  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
-//  hspi1.Init.NSS = SPI_NSS_SOFT;
-//  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
-//  hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
-//  hspi1.Init.TIMode = SPI_TIMODE_DISABLED;
-//  hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLED;
-//  hspi1.Init.CRCPolynomial = 10;
 	/* Structure for SPI configuration. */
 //	struct spi_config config;
 //	struct spi_slave_inst_config slave_config;
@@ -154,9 +130,7 @@ sint8 nm_bus_init(void *pvinit)
 //	/* Enable the SPI master. */
 //	spi_enable(&master);
 
-	nm_bsp_reset();
-	nm_bsp_sleep(1);
-#endif
+
 	return result;
 }
 
@@ -175,29 +149,12 @@ sint8 nm_bus_ioctl(uint8 u8Cmd, void* pvParameter)
 	sint8 s8Ret = 0;
 	switch(u8Cmd)
 	{
-#ifdef CONF_WINC_USE_I2C
-		case NM_BUS_IOCTL_R: {
-			tstrNmI2cDefault *pstrParam = (tstrNmI2cDefault *)pvParameter;
-			s8Ret = nm_i2c_read(pstrParam->pu8Buf, pstrParam->u16Sz);
-		}
-		break;
-		case NM_BUS_IOCTL_W: {
-			tstrNmI2cDefault *pstrParam = (tstrNmI2cDefault *)pvParameter;
-			s8Ret = nm_i2c_write(pstrParam->pu8Buf, pstrParam->u16Sz);
-		}
-		break;
-		case NM_BUS_IOCTL_W_SPECIAL: {
-			tstrNmI2cSpecial *pstrParam = (tstrNmI2cSpecial *)pvParameter;
-			s8Ret = nm_i2c_write_special(pstrParam->pu8Buf1, pstrParam->u16Sz1, pstrParam->pu8Buf2, pstrParam->u16Sz2);
-		}
-		break;
-#elif defined CONF_WINC_USE_SPI
 		case NM_BUS_IOCTL_RW: {
 			tstrNmSpiRw *pstrParam = (tstrNmSpiRw *)pvParameter;
 			s8Ret = spi_rw(pstrParam->pu8InBuf, pstrParam->pu8OutBuf, pstrParam->u16Sz);
 		}
 		break;
-#endif
+
 		default:
 			s8Ret = -1;
 			M2M_ERR("invalide ioclt cmd\n");

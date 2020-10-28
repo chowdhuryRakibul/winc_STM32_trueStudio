@@ -16,13 +16,9 @@
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
-/* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include <stdbool.h>
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "stm32f4xx_hal.h"
 #include "conf_winc.h"
@@ -32,15 +28,8 @@
 #include "driver/source/nmasic.h"
 #include "driver/include/m2m_wifi.h"
 #include "driver/source/m2m_hif.h"
-/* USER CODE END Includes */
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
 #define CONF_WINC_USE_SPI (1)
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
 
 #ifdef __GNUC__
 /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf set to 'Yes') calls __io_putchar() */
@@ -56,33 +45,17 @@ static uint8_t num_founded_ap = 0;
 #define MAIN_WLAN_AUTH        M2M_WIFI_SEC_WPA_PSK /* < Security manner */
 #define MAIN_WLAN_PSK         "diaspass" /* < Password for Destination SSID */
 
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
 //SPI_HandleTypeDef hspi2;
 
 UART_HandleTypeDef huart2;
 
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_SPI2_Init(void);
 static void MX_USART2_UART_Init(void);
 extern void isr(void);
-/* USER CODE BEGIN PFP */
 
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
 /**
  * \brief Interrupt handler for WiFi EXTI GPIO 2. Call callback API.
  *
@@ -120,7 +93,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 PUTCHAR_PROTOTYPE
 {
   /* Place your implementation of fputc here */
-  /* e.g. write a character to the USART3 and Loop until the end of transmission */
+  /* e.g. write a character to the USART2 and Loop until the end of transmission */
   HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
 
   return ch;
@@ -216,7 +189,6 @@ static void wifi_cb(uint8_t u8MsgType, void *pvMsg)
 	}
 }
 
-/* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
@@ -224,32 +196,19 @@ static void wifi_cb(uint8_t u8MsgType, void *pvMsg)
   */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
+	/* MCU Configuration--------------------------------------------------------*/
 
-  /* USER CODE END 1 */
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+	HAL_Init();
 
-  /* MCU Configuration--------------------------------------------------------*/
+	/* Configure the system clock */
+	SystemClock_Config();
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	/* Initialize all configured peripherals */
+	HAL_GPIO_WritePin(CONF_WINC_IRQ_PORT,CONF_WINC_IRQ_PIN,GPIO_PIN_SET);
+	MX_SPI2_Init();
+	MX_USART2_UART_Init();
 
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
-  SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
-//  MX_GPIO_Init();
-  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,GPIO_PIN_SET);
-  MX_SPI2_Init();
-  MX_USART2_UART_Init();
-  /* USER CODE BEGIN 2 */
 	tstrWifiInitParam param;
 	int8_t ret;
 	printf("Bismillah\n");
@@ -257,7 +216,6 @@ int main(void)
 	/* Initialize the BSP. */
 	nm_bsp_init();
 
-	/* Initialize Wi-Fi parameters structure. */
 	/* Initialize Wi-Fi parameters structure. */
 	memset((uint8_t *)&param, 0, sizeof(tstrWifiInitParam));
 
@@ -273,20 +231,13 @@ int main(void)
 	/* Request scan. */
 	m2m_wifi_request_scan(M2M_WIFI_CH_ALL);
 
-  /* USER CODE END 2 */
-
   /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
 		/* Handle pending events from network controller. */
 		while (m2m_wifi_handle_events(NULL) != M2M_SUCCESS) {
 		}
-
-    /* USER CODE BEGIN 3 */
   }
-  /* USER CODE END 3 */
 }
 
 /**
@@ -341,14 +292,6 @@ void SystemClock_Config(void)
   */
 static void MX_SPI2_Init(void)
 {
-
-  /* USER CODE BEGIN SPI2_Init 0 */
-
-  /* USER CODE END SPI2_Init 0 */
-
-  /* USER CODE BEGIN SPI2_Init 1 */
-
-  /* USER CODE END SPI2_Init 1 */
   /* SPI2 parameter configuration*/
   hspi2.Instance = SPI2;
   hspi2.Init.Mode = SPI_MODE_MASTER;
@@ -366,10 +309,6 @@ static void MX_SPI2_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN SPI2_Init 2 */
-
-  /* USER CODE END SPI2_Init 2 */
-
 }
 
 /**
@@ -379,14 +318,6 @@ static void MX_SPI2_Init(void)
   */
 static void MX_USART2_UART_Init(void)
 {
-
-  /* USER CODE BEGIN USART2_Init 0 */
-
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
   huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
@@ -399,15 +330,7 @@ static void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
 }
-
-/* USER CODE BEGIN 4 */
-
-/* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.
@@ -415,10 +338,7 @@ static void MX_USART2_UART_Init(void)
   */
 void Error_Handler(void)
 {
-  /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
 
-  /* USER CODE END Error_Handler_Debug */
 }
 
 #ifdef  USE_FULL_ASSERT

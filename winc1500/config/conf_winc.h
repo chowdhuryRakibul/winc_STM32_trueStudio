@@ -54,6 +54,7 @@ extern "C" {
    ---------------------------------
 */
 extern SPI_HandleTypeDef hspi2;
+
 #define CONF_WINC_RESET_PIN				GPIO_PIN_14
 #define CONF_WINC_ENABLE_PIN			GPIO_PIN_1
 #define CONF_WINC_WAKE_PIN				GPIO_PIN_13
@@ -74,13 +75,6 @@ extern SPI_HandleTypeDef hspi2;
 #define CONF_WINC_USE_SPI				(1)
 
 /** SPI pin and instance settings. */
-#define CONF_WINC_SPI_MODULE			EXT1_SPI_MODULE
-#define CONF_WINC_SPI_SERCOM_MUX		EXT1_SPI_SERCOM_MUX_SETTING
-#define CONF_WINC_SPI_PINMUX_PAD0		EXT1_SPI_SERCOM_PINMUX_PAD0 /* in */
-#define CONF_WINC_SPI_PINMUX_PAD1		PINMUX_UNUSED /* cs driven from software */
-#define CONF_WINC_SPI_PINMUX_PAD2		EXT1_SPI_SERCOM_PINMUX_PAD2 /* out */
-#define CONF_WINC_SPI_PINMUX_PAD3		EXT1_SPI_SERCOM_PINMUX_PAD3 /* sck */
-#define CONF_WINC_SPI_CS_PIN			EXT1_PIN_SPI_SS_0
 
 /** SPI interrupt pin. */
 #define CONF_WINC_SPI_INT_PIN			CONF_WINC_IRQ_PIN
@@ -98,7 +92,6 @@ extern SPI_HandleTypeDef hspi2;
    ---------------------------------
 */
 
-//#define CONF_WINC_DEBUG					(1)
 #define CONF_WINC_PRINTF				printf
 
 #ifdef __cplusplus

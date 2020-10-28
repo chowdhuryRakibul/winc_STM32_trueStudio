@@ -23,21 +23,21 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   9 .ARM.attributes 00000030  00000000  00000000  00020074  2**0
                   CONTENTS, READONLY
- 10 .debug_info   00012a21  00000000  00000000  000200a4  2**0
+ 10 .debug_info   00012a1c  00000000  00000000  000200a4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_abbrev 00002cd0  00000000  00000000  00032ac5  2**0
+ 11 .debug_abbrev 00002ca7  00000000  00000000  00032ac0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_aranges 00000ee0  00000000  00000000  00035798  2**3
+ 12 .debug_aranges 00000ee0  00000000  00000000  00035768  2**3
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000e08  00000000  00000000  00036678  2**3
+ 13 .debug_ranges 00000e08  00000000  00000000  00036648  2**3
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_line   00006fe9  00000000  00000000  00037480  2**0
+ 14 .debug_line   00006fe1  00000000  00000000  00037450  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    0000541c  00000000  00000000  0003e469  2**0
+ 15 .debug_str    0000541c  00000000  00000000  0003e431  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .comment      0000007c  00000000  00000000  00043885  2**0
+ 16 .comment      0000007c  00000000  00000000  0004384d  2**0
                   CONTENTS, READONLY
- 17 .debug_frame  000042d4  00000000  00000000  00043904  2**2
+ 17 .debug_frame  000042d4  00000000  00000000  000438cc  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -489,7 +489,7 @@ PUTCHAR_PROTOTYPE
  8000620:	af00      	add	r7, sp, #0
  8000622:	6078      	str	r0, [r7, #4]
   /* Place your implementation of fputc here */
-  /* e.g. write a character to the USART3 and Loop until the end of transmission */
+  /* e.g. write a character to the USART2 and Loop until the end of transmission */
   HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
  8000624:	1d39      	adds	r1, r7, #4
  8000626:	f64f 73ff 	movw	r3, #65535	; 0xffff
@@ -824,35 +824,27 @@ int main(void)
  800084c:	b580      	push	{r7, lr}
  800084e:	b088      	sub	sp, #32
  8000850:	af00      	add	r7, sp, #0
-  /* USER CODE END 1 */
+	/* MCU Configuration--------------------------------------------------------*/
 
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+	HAL_Init();
  8000852:	f000 fac7 	bl	8000de4 <HAL_Init>
-  /* USER CODE BEGIN Init */
 
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
-  SystemClock_Config();
+	/* Configure the system clock */
+	SystemClock_Config();
  8000856:	f000 f83b 	bl	80008d0 <SystemClock_Config>
 
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
-//  MX_GPIO_Init();
-  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_15,GPIO_PIN_SET);
+	/* Initialize all configured peripherals */
+	HAL_GPIO_WritePin(CONF_WINC_IRQ_PORT,CONF_WINC_IRQ_PIN,GPIO_PIN_SET);
  800085a:	2201      	movs	r2, #1
  800085c:	f44f 4100 	mov.w	r1, #32768	; 0x8000
  8000860:	4817      	ldr	r0, [pc, #92]	; (80008c0 <main+0x74>)
  8000862:	f000 fe05 	bl	8001470 <HAL_GPIO_WritePin>
-  MX_SPI2_Init();
+	MX_SPI2_Init();
  8000866:	f000 f89f 	bl	80009a8 <MX_SPI2_Init>
-  MX_USART2_UART_Init();
+	MX_USART2_UART_Init();
  800086a:	f000 f8d3 	bl	8000a14 <MX_USART2_UART_Init>
-  /* USER CODE BEGIN 2 */
+
 	tstrWifiInitParam param;
 	int8_t ret;
 	printf("Bismillah\n");
@@ -863,7 +855,6 @@ int main(void)
 	nm_bsp_init();
  8000874:	f002 fa2e 	bl	8002cd4 <nm_bsp_init>
 
-	/* Initialize Wi-Fi parameters structure. */
 	/* Initialize Wi-Fi parameters structure. */
 	memset((uint8_t *)&param, 0, sizeof(tstrWifiInitParam));
  8000878:	1d3b      	adds	r3, r7, #4
@@ -900,10 +891,10 @@ int main(void)
 	m2m_wifi_request_scan(M2M_WIFI_CH_ALL);
  80008aa:	20ff      	movs	r0, #255	; 0xff
  80008ac:	f003 fabe 	bl	8003e2c <m2m_wifi_request_scan>
-  /* USER CODE BEGIN WHILE */
+
+  /* Infinite loop */
   while (1)
   {
-    /* USER CODE END WHILE */
 		/* Handle pending events from network controller. */
 		while (m2m_wifi_handle_events(NULL) != M2M_SUCCESS) {
  80008b0:	bf00      	nop
@@ -1064,10 +1055,6 @@ static void MX_SPI2_Init(void)
 {
  80009a8:	b580      	push	{r7, lr}
  80009aa:	af00      	add	r7, sp, #0
-
-  /* USER CODE BEGIN SPI2_Init 1 */
-
-  /* USER CODE END SPI2_Init 1 */
   /* SPI2 parameter configuration*/
   hspi2.Instance = SPI2;
  80009ac:	4b17      	ldr	r3, [pc, #92]	; (8000a0c <MX_SPI2_Init+0x64>)
@@ -1127,10 +1114,6 @@ static void MX_SPI2_Init(void)
     Error_Handler();
  8000a04:	f000 f830 	bl	8000a68 <Error_Handler>
   }
-  /* USER CODE BEGIN SPI2_Init 2 */
-
-  /* USER CODE END SPI2_Init 2 */
-
 }
  8000a08:	bf00      	nop
  8000a0a:	bd80      	pop	{r7, pc}
@@ -1146,11 +1129,6 @@ static void MX_USART2_UART_Init(void)
 {
  8000a14:	b580      	push	{r7, lr}
  8000a16:	af00      	add	r7, sp, #0
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
  8000a18:	4b11      	ldr	r3, [pc, #68]	; (8000a60 <MX_USART2_UART_Init+0x4c>)
  8000a1a:	4a12      	ldr	r2, [pc, #72]	; (8000a64 <MX_USART2_UART_Init+0x50>)
@@ -1193,10 +1171,6 @@ static void MX_USART2_UART_Init(void)
     Error_Handler();
  8000a56:	f000 f807 	bl	8000a68 <Error_Handler>
   }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
 }
  8000a5a:	bf00      	nop
  8000a5c:	bd80      	pop	{r7, pc}
@@ -1213,10 +1187,7 @@ void Error_Handler(void)
 {
  8000a68:	b480      	push	{r7}
  8000a6a:	af00      	add	r7, sp, #0
-  /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
 
-  /* USER CODE END Error_Handler_Debug */
 }
  8000a6c:	bf00      	nop
  8000a6e:	46bd      	mov	sp, r7
@@ -7227,17 +7198,16 @@ sint8 nm_bus_init(void *pvinit)
 	sint8 result = M2M_SUCCESS;
  8002e88:	2300      	movs	r3, #0
  8002e8a:	73fb      	strb	r3, [r7, #15]
-//	}
-
-//	/* Enable the SPI master. */
-//	spi_enable(&master);
-
 	nm_bsp_reset();
  8002e8c:	f7ff ff2c 	bl	8002ce8 <nm_bsp_reset>
 	nm_bsp_sleep(1);
  8002e90:	2001      	movs	r0, #1
  8002e92:	f7ff ff4b 	bl	8002d2c <nm_bsp_sleep>
-#endif
+
+//	/* Enable the SPI master. */
+//	spi_enable(&master);
+
+
 	return result;
  8002e96:	f997 300f 	ldrsb.w	r3, [r7, #15]
 }
@@ -7266,10 +7236,7 @@ sint8 nm_bus_ioctl(uint8 u8Cmd, void* pvParameter)
  8002eb2:	79fb      	ldrb	r3, [r7, #7]
  8002eb4:	2b03      	cmp	r3, #3
  8002eb6:	d10d      	bne.n	8002ed4 <nm_bus_ioctl+0x32>
-			s8Ret = nm_i2c_write_special(pstrParam->pu8Buf1, pstrParam->u16Sz1, pstrParam->pu8Buf2, pstrParam->u16Sz2);
-		}
-		break;
-#elif defined CONF_WINC_USE_SPI
+	{
 		case NM_BUS_IOCTL_RW: {
 			tstrNmSpiRw *pstrParam = (tstrNmSpiRw *)pvParameter;
  8002eb8:	683b      	ldr	r3, [r7, #0]
@@ -7288,7 +7255,7 @@ sint8 nm_bus_ioctl(uint8 u8Cmd, void* pvParameter)
 		}
 		break;
  8002ed2:	e002      	b.n	8002eda <nm_bus_ioctl+0x38>
-#endif
+
 		default:
 			s8Ret = -1;
  8002ed4:	23ff      	movs	r3, #255	; 0xff
