@@ -1,6 +1,6 @@
 nm_bus_wrapper_stm32f429.c:64:14:spi_rw	40	static
 nm_bus_wrapper_stm32f429.c:96:6:nm_bus_wifi_spi_init	48	static
 nm_bus_wrapper_stm32f429.c:132:7:nm_bus_init	24	static
-nm_bus_wrapper_stm32f429.c:180:7:nm_bus_ioctl	24	static
-nm_bus_wrapper_stm32f429.c:204:7:nm_bus_deinit	16	static
-nm_bus_wrapper_stm32f429.c:220:7:nm_bus_reinit	16	static
+nm_bus_wrapper_stm32f429.c:168:7:nm_bus_ioctl	24	static
+nm_bus_wrapper_stm32f429.c:192:7:nm_bus_deinit	16	static
+nm_bus_wrapper_stm32f429.c:208:7:nm_bus_reinit	16	static

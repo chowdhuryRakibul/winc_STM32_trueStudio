@@ -21,6 +21,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "conf_winc.h"
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -87,7 +88,7 @@ void HAL_MspInit(void)
 */
 void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
 {
-  if(hspi->Instance==SPI2)
+  if(hspi->Instance==SPI_WIFI)
   {
 	  nm_bus_wifi_spi_init(hspi);
   }

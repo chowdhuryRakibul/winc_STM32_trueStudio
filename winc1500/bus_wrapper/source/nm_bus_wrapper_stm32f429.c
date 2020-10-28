@@ -132,36 +132,24 @@ void nm_bus_wifi_spi_init(SPI_HandleTypeDef *hspi)
 sint8 nm_bus_init(void *pvinit)
 {
 	sint8 result = M2M_SUCCESS;
-	nm_bsp_reset();
-	nm_bsp_sleep(1);
 
-
-	/* Structure for SPI configuration. */
-//	struct spi_config config;
-//	struct spi_slave_inst_config slave_config;
-
-//	/* Select SPI slave CS pin. */
-//	/* This step will set the CS high */
-//	spi_slave_inst_get_config_defaults(&slave_config);
-//	slave_config.ss_pin = CONF_WINC_SPI_CS_PIN;
-//	spi_attach_slave(&slave_inst, &slave_config);
-
-//	/* Configure the SPI master. */
-//	spi_get_config_defaults(&config);
-//	config.mux_setting = CONF_WINC_SPI_SERCOM_MUX;
-//	config.pinmux_pad0 = CONF_WINC_SPI_PINMUX_PAD0;
-//	config.pinmux_pad1 = CONF_WINC_SPI_PINMUX_PAD1;
-//	config.pinmux_pad2 = CONF_WINC_SPI_PINMUX_PAD2;
-//	config.pinmux_pad3 = CONF_WINC_SPI_PINMUX_PAD3;
-//	config.master_slave_select_enable = false;
-
-//	config.mode_specific.master.baudrate = CONF_WINC_SPI_CLOCK;
-//	if (spi_init(&master, CONF_WINC_SPI_MODULE, &config) != STATUS_OK) {
-//		return M2M_ERR_BUS_FAIL;
-//	}
-
-//	/* Enable the SPI master. */
-//	spi_enable(&master);
+	/* SPI2 parameter configuration*/
+	hspi2.Instance = SPI2;
+	hspi2.Init.Mode = SPI_MODE_MASTER;
+	hspi2.Init.Direction = SPI_DIRECTION_2LINES;
+	hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
+	hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
+	hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
+	hspi2.Init.NSS = SPI_NSS_SOFT;
+	hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
+	hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
+	hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
+	hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+	hspi2.Init.CRCPolynomial = 10;
+	if (HAL_SPI_Init(&hspi2) != HAL_OK)
+	{
+		M2M_ERR("SPI bus Initialization error\r\n");
+	}
 
 	HAL_SPI_MspInit(&hspi2);
 	return result;

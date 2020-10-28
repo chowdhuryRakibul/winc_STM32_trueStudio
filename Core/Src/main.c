@@ -50,7 +50,6 @@ UART_HandleTypeDef huart2;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-static void MX_SPI2_Init(void);
 static void MX_USART2_UART_Init(void);
 extern void isr(void);
 
@@ -204,7 +203,6 @@ int main(void)
 
 	/* Initialize all configured peripherals */
 	HAL_GPIO_WritePin(CONF_WINC_IRQ_PORT,CONF_WINC_IRQ_PIN,GPIO_PIN_SET);
-	MX_SPI2_Init();
 	MX_USART2_UART_Init();
 
 	tstrWifiInitParam param;
@@ -229,13 +227,13 @@ int main(void)
 	/* Request scan. */
 	m2m_wifi_request_scan(M2M_WIFI_CH_ALL);
 
-  /* Infinite loop */
-  while (1)
-  {
+	/* Infinite loop */
+	while (1)
+	{
 		/* Handle pending events from network controller. */
 		while (m2m_wifi_handle_events(NULL) != M2M_SUCCESS) {
 		}
-  }
+	}
 }
 
 /**
@@ -278,32 +276,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
-
-/**
-  * @brief SPI2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_SPI2_Init(void)
-{
-  /* SPI2 parameter configuration*/
-  hspi2.Instance = SPI2;
-  hspi2.Init.Mode = SPI_MODE_MASTER;
-  hspi2.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi2.Init.NSS = SPI_NSS_SOFT;
-  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
-  hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
-  hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
-  hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-  hspi2.Init.CRCPolynomial = 10;
-  if (HAL_SPI_Init(&hspi2) != HAL_OK)
   {
     Error_Handler();
   }
