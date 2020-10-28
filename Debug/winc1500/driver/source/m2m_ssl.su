@@ -1,0 +1,9 @@
+m2m_ssl.c:74:13:m2m_ssl_cb	136	static
+m2m_ssl.c:123:15:m2m_ssl_handshake_rsp	48	static
+m2m_ssl.c:141:15:m2m_ssl_send_certs_to_winc	40	static
+m2m_ssl.c:163:15:m2m_ssl_retrieve_cert	32	static
+m2m_ssl.c:217:15:m2m_ssl_retrieve_hash	24	static
+m2m_ssl.c:241:14:m2m_ssl_stop_processing_certs	8	static
+m2m_ssl.c:250:14:m2m_ssl_ecc_process_done	4	static
+m2m_ssl.c:275:7:m2m_ssl_set_active_ciphersuites	40	static
+m2m_ssl.c:293:15:m2m_ssl_init	24	static

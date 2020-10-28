@@ -1,0 +1,13 @@
+x509_cert.c:193:7:M2M_GetTimeOfDay	16	static
+x509_cert.c:219:7:Cert_DecodeAlgID	48	static
+x509_cert.c:253:7:Cert_DecodeDistinguishedName	56	static
+x509_cert.c:282:7:Cert_DecodeX520Name	176	static
+x509_cert.c:359:7:Cert_DecodeRSAPubKey	40	static
+x509_cert.c:399:7:Cert_DecodeSubjectPubKey	40	static
+x509_cert.c:435:7:Cert_DecodeValidity	40	static
+x509_cert.c:465:7:Cert_DecodeTBSCertificate	40	static
+x509_cert.c:600:7:X509Cert_Decode	48	static
+x509_cert.c:686:7:Cert_DecodeTime	48	static
+x509_cert.c:734:7:Cert_CompareTime	24	static
+x509_cert.c:760:7:X509Cert_IsValid	32	static
+x509_cert.c:792:6:X509Cert_Dump	56	static

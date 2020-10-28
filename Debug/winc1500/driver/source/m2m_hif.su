@@ -1,0 +1,15 @@
+m2m_hif.c:91:6:isr	4	static
+m2m_hif.c:101:14:hif_set_rx_done	16	static
+m2m_hif.c:138:13:m2m_hif_cb	16	static
+m2m_hif.c:149:7:hif_chip_wake	16	static
+m2m_hif.c:186:6:hif_set_sleep_mode	16	static
+m2m_hif.c:201:7:hif_get_sleep_mode	4	static
+m2m_hif.c:212:7:hif_chip_sleep_sc	4	static
+m2m_hif.c:226:7:hif_chip_sleep	16	static
+m2m_hif.c:258:7:hif_init	16	static
+m2m_hif.c:272:7:hif_deinit	24	static
+m2m_hif.c:300:7:hif_send	40	static
+m2m_hif.c:439:14:hif_isr	32	static
+m2m_hif.c:609:7:hif_handle_isr	16	static
+m2m_hif.c:644:7:hif_receive	32	static
+m2m_hif.c:700:7:hif_register_cb	24	static

@@ -1,0 +1,6 @@
+nmdrv.c:65:7:nm_get_firmware_info	32	static
+nmdrv.c:108:7:nm_get_firmware_full_info	40	static
+nmdrv.c:171:7:nm_get_ota_firmware_info	40	static
+nmdrv.c:240:7:nm_drv_init_download_mode	16	static
+nmdrv.c:283:7:nm_drv_init	24	static
+nmdrv.c:362:7:nm_drv_deinit	24	static

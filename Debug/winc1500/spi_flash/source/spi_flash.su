@@ -1,0 +1,16 @@
+spi_flash.c:96:14:spi_flash_read_status_reg	24	static
+spi_flash.c:229:14:spi_flash_load_to_cortus_mem	40	static
+spi_flash.c:267:14:spi_flash_sector_erase	32	static
+spi_flash.c:301:14:spi_flash_write_enable	16	static
+spi_flash.c:331:14:spi_flash_write_disable	16	static
+spi_flash.c:366:14:spi_flash_page_program	40	static
+spi_flash.c:405:14:spi_flash_read_internal	32	static
+spi_flash.c:429:14:spi_flash_pp	32	static
+spi_flash.c:455:15:spi_flash_rdid	24	static
+spi_flash.c:504:13:spi_flash_enter_low_power_mode	16	static
+spi_flash.c:519:13:spi_flash_leave_low_power_mode	16	static
+spi_flash.c:541:7:spi_flash_enable	24	static
+spi_flash.c:583:7:spi_flash_read	32	static
+spi_flash.c:617:7:spi_flash_write	40	static
+spi_flash.c:694:7:spi_flash_erase	24	static
+spi_flash.c:732:8:spi_flash_get_size	16	static

@@ -1,0 +1,13 @@
+m2m_ota.c:81:13:m2m_ota_cb	40	static
+m2m_ota.c:128:16:m2m_ota_init	24	static
+m2m_ota.c:160:16:m2m_ota_notif_set_url	40	static
+m2m_ota.c:182:16:m2m_ota_notif_check_for_update	32	static
+m2m_ota.c:202:15:m2m_ota_notif_sched	40	static
+m2m_ota.c:223:15:m2m_ota_start_update	40	static
+m2m_ota.c:247:15:m2m_ota_start_update_crt	40	static
+m2m_ota.c:266:15:m2m_ota_rollback	32	static
+m2m_ota.c:282:15:m2m_ota_rollback_crt	32	static
+m2m_ota.c:299:15:m2m_ota_abort	32	static
+m2m_ota.c:317:15:m2m_ota_switch_firmware	32	static
+m2m_ota.c:333:15:m2m_ota_switch_crt	32	static
+m2m_ota.c:350:15:m2m_ota_get_firmware_version	24	static

@@ -1,0 +1,3 @@
+root_setup.c:86:12:GetRootCertificate	32	static
+root_setup.c:107:14:UpdateRootList	72	static
+root_setup.c:207:5:WriteRootCertificate	568	static

@@ -1,0 +1,5 @@
+nm_bus_wrapper_stm32f429.c:64:14:spi_rw	40	static
+nm_bus_wrapper_stm32f429.c:100:7:nm_bus_init	24	static
+nm_bus_wrapper_stm32f429.c:173:7:nm_bus_ioctl	24	static
+nm_bus_wrapper_stm32f429.c:214:7:nm_bus_deinit	16	static
+nm_bus_wrapper_stm32f429.c:230:7:nm_bus_reinit	16	static

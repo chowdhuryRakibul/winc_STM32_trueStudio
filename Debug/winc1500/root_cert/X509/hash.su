@@ -1,0 +1,9 @@
+hash.c:89:13:MD5ProcessBlock	432	static
+hash.c:145:13:SHA1ProcessBlock	360	static
+hash.c:200:13:SHA256ProcessBlock	576	static
+hash.c:266:13:Sha_HashUpdate	40	static
+hash.c:309:13:Sha_HashFinish	24	static
+hash.c:339:6:SHA1_Hash	32	static
+hash.c:383:6:SHA256_Hash	32	static
+hash.c:434:6:MD5_Hash	40	static
+hash.c:486:6:HMAC_Vector	280	static
