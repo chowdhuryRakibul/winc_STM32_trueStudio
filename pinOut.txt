@@ -1,0 +1,10 @@
+SPI2
+	MISO		PC2
+	MOSI		PC3
+	SCK		PB10
+	CS		PC1
+
+	RESET		PB14		Pulled up to VCC
+	ENABLE		PB1		Pulled up to VCC
+	IRQ		PB15		External Interrupt 15 on Falling Edge, Pull Up
+	WAKE		PB13
