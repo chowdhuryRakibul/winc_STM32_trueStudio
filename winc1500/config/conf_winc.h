@@ -53,7 +53,6 @@ extern "C" {
    ---------- PIN settings ---------
    ---------------------------------
 */
-extern SPI_HandleTypeDef hspi2;
 
 #define CONF_WINC_RESET_PIN				GPIO_PIN_14
 #define CONF_WINC_ENABLE_PIN			GPIO_PIN_1

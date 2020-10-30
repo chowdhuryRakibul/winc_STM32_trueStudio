@@ -2472,32 +2472,32 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.3.0/armtools/bin/../l
                 0x00000b8c       0x22 c:/program files (x86)/atollic/truestudio for stm32 9.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
 OUTPUT(tryWincTrueStudio_1.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x12c3a
- .debug_info    0x00000000     0x1bfb Core\Src\main.o
- .debug_info    0x00001bfb      0xbe8 Core\Src\stm32f4xx_hal_msp.o
- .debug_info    0x000027e3      0x20c Core\Src\stm32f4xx_it.o
- .debug_info    0x000029ef      0xf16 Core\Src\syscalls.o
- .debug_info    0x00003905      0x53f Core\Src\system_stm32f4xx.o
- .debug_info    0x00003e44      0x879 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o
- .debug_info    0x000046bd      0xd7a Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o
- .debug_info    0x00005437      0x7b6 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o
- .debug_info    0x00005bed      0x8f8 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o
- .debug_info    0x000064e5      0x6b4 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o
- .debug_info    0x00006b99     0x162f Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o
- .debug_info    0x000081c8     0x1241 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o
- .debug_info    0x00009409       0x86 startup\startup_stm32f410rx.o
- .debug_info    0x0000948f      0xbe8 winc1500\bsp\source\nm_bsp_stm32f429.o
- .debug_info    0x0000a077     0x13a0 winc1500\bus_wrapper\source\nm_bus_wrapper_stm32f429.o
- .debug_info    0x0000b417      0x287 winc1500\common\source\nm_common.o
- .debug_info    0x0000b69e     0x14bb winc1500\driver\source\m2m_hif.o
- .debug_info    0x0000cb59     0x28f5 winc1500\driver\source\m2m_wifi.o
- .debug_info    0x0000f44e      0x668 winc1500\driver\source\nmasic.o
- .debug_info    0x0000fab6      0x959 winc1500\driver\source\nmbus.o
- .debug_info    0x0001040f     0x1229 winc1500\driver\source\nmdrv.o
- .debug_info    0x00011638      0xf3d winc1500\driver\source\nmspi.o
- .debug_info    0x00012575      0x6c5 winc1500\spi_flash\source\spi_flash.o
+.debug_info     0x00000000    0x111e6
+ .debug_info    0x00000000     0x1999 Core\Src\main.o
+ .debug_info    0x00001999      0xbdd Core\Src\stm32f4xx_hal_msp.o
+ .debug_info    0x00002576      0x20c Core\Src\stm32f4xx_it.o
+ .debug_info    0x00002782      0xf16 Core\Src\syscalls.o
+ .debug_info    0x00003698      0x53f Core\Src\system_stm32f4xx.o
+ .debug_info    0x00003bd7      0x879 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o
+ .debug_info    0x00004450      0xd7a Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o
+ .debug_info    0x000051ca      0x7b6 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o
+ .debug_info    0x00005980      0x8f8 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o
+ .debug_info    0x00006278      0x6b4 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o
+ .debug_info    0x0000692c     0x162f Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o
+ .debug_info    0x00007f5b     0x1241 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o
+ .debug_info    0x0000919c       0x86 startup\startup_stm32f410rx.o
+ .debug_info    0x00009222      0x732 winc1500\bsp\source\nm_bsp_stm32f429.o
+ .debug_info    0x00009954     0x1399 winc1500\bus_wrapper\source\nm_bus_wrapper_stm32f429.o
+ .debug_info    0x0000aced      0x287 winc1500\common\source\nm_common.o
+ .debug_info    0x0000af74      0xff1 winc1500\driver\source\m2m_hif.o
+ .debug_info    0x0000bf65     0x28f5 winc1500\driver\source\m2m_wifi.o
+ .debug_info    0x0000e85a      0x668 winc1500\driver\source\nmasic.o
+ .debug_info    0x0000eec2      0x48f winc1500\driver\source\nmbus.o
+ .debug_info    0x0000f351      0xd5f winc1500\driver\source\nmdrv.o
+ .debug_info    0x000100b0      0xa71 winc1500\driver\source\nmspi.o
+ .debug_info    0x00010b21      0x6c5 winc1500\spi_flash\source\spi_flash.o
 
-.debug_abbrev   0x00000000     0x2ce2
+.debug_abbrev   0x00000000     0x2be0
  .debug_abbrev  0x00000000      0x292 Core\Src\main.o
  .debug_abbrev  0x00000292      0x19d Core\Src\stm32f4xx_hal_msp.o
  .debug_abbrev  0x0000042f       0xc1 Core\Src\stm32f4xx_it.o
@@ -2511,16 +2511,16 @@ OUTPUT(tryWincTrueStudio_1.elf elf32-littlearm)
  .debug_abbrev  0x00001306      0x23b Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o
  .debug_abbrev  0x00001541      0x24c Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o
  .debug_abbrev  0x0000178d       0x12 startup\startup_stm32f410rx.o
- .debug_abbrev  0x0000179f      0x1e1 winc1500\bsp\source\nm_bsp_stm32f429.o
- .debug_abbrev  0x00001980      0x237 winc1500\bus_wrapper\source\nm_bus_wrapper_stm32f429.o
- .debug_abbrev  0x00001bb7       0xef winc1500\common\source\nm_common.o
- .debug_abbrev  0x00001ca6      0x32f winc1500\driver\source\m2m_hif.o
- .debug_abbrev  0x00001fd5      0x2e0 winc1500\driver\source\m2m_wifi.o
- .debug_abbrev  0x000022b5      0x1d1 winc1500\driver\source\nmasic.o
- .debug_abbrev  0x00002486      0x214 winc1500\driver\source\nmbus.o
- .debug_abbrev  0x0000269a      0x25a winc1500\driver\source\nmdrv.o
- .debug_abbrev  0x000028f4      0x276 winc1500\driver\source\nmspi.o
- .debug_abbrev  0x00002b6a      0x178 winc1500\spi_flash\source\spi_flash.o
+ .debug_abbrev  0x0000179f      0x1bb winc1500\bsp\source\nm_bsp_stm32f429.o
+ .debug_abbrev  0x0000195a      0x248 winc1500\bus_wrapper\source\nm_bus_wrapper_stm32f429.o
+ .debug_abbrev  0x00001ba2       0xef winc1500\common\source\nm_common.o
+ .debug_abbrev  0x00001c91      0x322 winc1500\driver\source\m2m_hif.o
+ .debug_abbrev  0x00001fb3      0x2e0 winc1500\driver\source\m2m_wifi.o
+ .debug_abbrev  0x00002293      0x1d1 winc1500\driver\source\nmasic.o
+ .debug_abbrev  0x00002464      0x1ae winc1500\driver\source\nmbus.o
+ .debug_abbrev  0x00002612      0x24d winc1500\driver\source\nmdrv.o
+ .debug_abbrev  0x0000285f      0x209 winc1500\driver\source\nmspi.o
+ .debug_abbrev  0x00002a68      0x178 winc1500\spi_flash\source\spi_flash.o
 
 .debug_aranges  0x00000000      0xee0
  .debug_aranges
@@ -2595,74 +2595,74 @@ OUTPUT(tryWincTrueStudio_1.elf elf32-littlearm)
  .debug_ranges  0x00000cc8       0xb8 winc1500\driver\source\nmspi.o
  .debug_ranges  0x00000d80       0x88 winc1500\spi_flash\source\spi_flash.o
 
-.debug_line     0x00000000     0x703b
- .debug_line    0x00000000      0x52e Core\Src\main.o
- .debug_line    0x0000052e      0x310 Core\Src\stm32f4xx_hal_msp.o
- .debug_line    0x0000083e      0x26b Core\Src\stm32f4xx_it.o
- .debug_line    0x00000aa9      0x3dd Core\Src\syscalls.o
- .debug_line    0x00000e86      0x20f Core\Src\system_stm32f4xx.o
- .debug_line    0x00001095      0x41d Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o
- .debug_line    0x000014b2      0x553 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o
- .debug_line    0x00001a05      0x3b1 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o
- .debug_line    0x00001db6      0x4c2 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o
- .debug_line    0x00002278      0x448 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o
- .debug_line    0x000026c0      0xc03 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o
- .debug_line    0x000032c3      0xb5c Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o
- .debug_line    0x00003e1f       0x7e startup\startup_stm32f410rx.o
- .debug_line    0x00003e9d      0x394 winc1500\bsp\source\nm_bsp_stm32f429.o
- .debug_line    0x00004231      0x4a6 winc1500\bus_wrapper\source\nm_bus_wrapper_stm32f429.o
- .debug_line    0x000046d7      0x181 winc1500\common\source\nm_common.o
- .debug_line    0x00004858      0x6d0 winc1500\driver\source\m2m_hif.o
- .debug_line    0x00004f28      0x91a winc1500\driver\source\m2m_wifi.o
- .debug_line    0x00005842      0x456 winc1500\driver\source\nmasic.o
- .debug_line    0x00005c98      0x427 winc1500\driver\source\nmbus.o
- .debug_line    0x000060bf      0x5ba winc1500\driver\source\nmdrv.o
- .debug_line    0x00006679      0x65a winc1500\driver\source\nmspi.o
- .debug_line    0x00006cd3      0x368 winc1500\spi_flash\source\spi_flash.o
+.debug_line     0x00000000     0x6bbf
+ .debug_line    0x00000000      0x4be Core\Src\main.o
+ .debug_line    0x000004be      0x2b7 Core\Src\stm32f4xx_hal_msp.o
+ .debug_line    0x00000775      0x26b Core\Src\stm32f4xx_it.o
+ .debug_line    0x000009e0      0x3dd Core\Src\syscalls.o
+ .debug_line    0x00000dbd      0x20f Core\Src\system_stm32f4xx.o
+ .debug_line    0x00000fcc      0x41d Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o
+ .debug_line    0x000013e9      0x553 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o
+ .debug_line    0x0000193c      0x3b1 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o
+ .debug_line    0x00001ced      0x4c2 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o
+ .debug_line    0x000021af      0x448 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o
+ .debug_line    0x000025f7      0xc03 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o
+ .debug_line    0x000031fa      0xb5c Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o
+ .debug_line    0x00003d56       0x7e startup\startup_stm32f410rx.o
+ .debug_line    0x00003dd4      0x2f6 winc1500\bsp\source\nm_bsp_stm32f429.o
+ .debug_line    0x000040ca      0x44d winc1500\bus_wrapper\source\nm_bus_wrapper_stm32f429.o
+ .debug_line    0x00004517      0x181 winc1500\common\source\nm_common.o
+ .debug_line    0x00004698      0x621 winc1500\driver\source\m2m_hif.o
+ .debug_line    0x00004cb9      0x91a winc1500\driver\source\m2m_wifi.o
+ .debug_line    0x000055d3      0x456 winc1500\driver\source\nmasic.o
+ .debug_line    0x00005a29      0x378 winc1500\driver\source\nmbus.o
+ .debug_line    0x00005da1      0x50b winc1500\driver\source\nmdrv.o
+ .debug_line    0x000062ac      0x5ab winc1500\driver\source\nmspi.o
+ .debug_line    0x00006857      0x368 winc1500\spi_flash\source\spi_flash.o
 
 .debug_str      0x00000000     0x5424
- .debug_str     0x00000000     0x1828 Core\Src\main.o
-                               0x19a3 (size before relaxing)
- .debug_str     0x00001828       0xc8 Core\Src\stm32f4xx_hal_msp.o
-                                0xa0f (size before relaxing)
- .debug_str     0x000018f0       0xab Core\Src\stm32f4xx_it.o
+ .debug_str     0x00000000     0x16b3 Core\Src\main.o
+                               0x1813 (size before relaxing)
+ .debug_str     0x000016b3      0x237 Core\Src\stm32f4xx_hal_msp.o
+                                0xa09 (size before relaxing)
+ .debug_str     0x000018ea       0xab Core\Src\stm32f4xx_it.o
                                 0x33a (size before relaxing)
- .debug_str     0x0000199b      0x239 Core\Src\syscalls.o
+ .debug_str     0x00001995      0x239 Core\Src\syscalls.o
                                 0x867 (size before relaxing)
- .debug_str     0x00001bd4       0xaf Core\Src\system_stm32f4xx.o
+ .debug_str     0x00001bce       0xaf Core\Src\system_stm32f4xx.o
                                 0x41d (size before relaxing)
- .debug_str     0x00001c83      0x601 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o
+ .debug_str     0x00001c7d      0x601 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o
                                 0x9dc (size before relaxing)
- .debug_str     0x00002284      0x492 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o
+ .debug_str     0x0000227e      0x492 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o
                                 0xb7d (size before relaxing)
- .debug_str     0x00002716      0x11b Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o
+ .debug_str     0x00002710      0x11b Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o
                                 0x5ba (size before relaxing)
- .debug_str     0x00002831      0x1b9 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o
+ .debug_str     0x0000282b      0x1b9 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o
                                 0x770 (size before relaxing)
- .debug_str     0x000029ea      0x17f Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o
+ .debug_str     0x000029e4      0x17f Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o
                                 0x656 (size before relaxing)
- .debug_str     0x00002b69      0x526 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o
+ .debug_str     0x00002b63      0x526 Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o
                                 0xc7e (size before relaxing)
- .debug_str     0x0000308f      0x50d Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o
+ .debug_str     0x00003089      0x50d Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o
                                 0xc9b (size before relaxing)
- .debug_str     0x0000359c       0xbe winc1500\bsp\source\nm_bsp_stm32f429.o
-                                0xc76 (size before relaxing)
- .debug_str     0x0000365a      0x119 winc1500\bus_wrapper\source\nm_bus_wrapper_stm32f429.o
+ .debug_str     0x00003596       0xbe winc1500\bsp\source\nm_bsp_stm32f429.o
+                                0x84d (size before relaxing)
+ .debug_str     0x00003654      0x11f winc1500\bus_wrapper\source\nm_bus_wrapper_stm32f429.o
                                 0xdef (size before relaxing)
  .debug_str     0x00003773       0xd3 winc1500\common\source\nm_common.o
                                 0x243 (size before relaxing)
  .debug_str     0x00003846      0x38d winc1500\driver\source\m2m_hif.o
-                                0xef1 (size before relaxing)
+                                0xaaf (size before relaxing)
  .debug_str     0x00003bd3     0x10e6 winc1500\driver\source\m2m_wifi.o
                                0x219c (size before relaxing)
  .debug_str     0x00004cb9      0x204 winc1500\driver\source\nmasic.o
                                 0x473 (size before relaxing)
  .debug_str     0x00004ebd       0xe5 winc1500\driver\source\nmbus.o
-                                0x83a (size before relaxing)
+                                0x3f8 (size before relaxing)
  .debug_str     0x00004fa2       0xd0 winc1500\driver\source\nmdrv.o
-                                0xd78 (size before relaxing)
+                                0x936 (size before relaxing)
  .debug_str     0x00005072      0x1c3 winc1500\driver\source\nmspi.o
-                                0x970 (size before relaxing)
+                                0x52e (size before relaxing)
  .debug_str     0x00005235      0x1ef winc1500\spi_flash\source\spi_flash.o
                                 0x3da (size before relaxing)
 

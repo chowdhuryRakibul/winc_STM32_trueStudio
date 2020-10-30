@@ -65,7 +65,7 @@ static sint8 spi_rw(uint8* pu8Mosi, uint8* pu8Miso, uint16 u16Sz)
 {
 	HAL_StatusTypeDef status;
 	/* Start SPI transaction - polling method */
-	HAL_GPIO_WritePin(SPI_WIFI_CS_PORT,SPI_WIFI_CS_PIN,GPIO_PIN_RESET);;
+	HAL_GPIO_WritePin(SPI_WIFI_CS_PORT,SPI_WIFI_CS_PIN,GPIO_PIN_RESET);
 	/* Transmit/Recieve */
 	if (pu8Mosi == NULL)
 	{
@@ -87,7 +87,7 @@ static sint8 spi_rw(uint8* pu8Mosi, uint8* pu8Miso, uint16 u16Sz)
 		M2M_ERR("%s: HAL_SPI_TransmitReceive failed. error (%d)\n",__FUNCTION__,status);
 		return status;
 	}
-	HAL_GPIO_WritePin(SPI_WIFI_CS_PORT,SPI_WIFI_CS_PIN,GPIO_PIN_SET);;
+	HAL_GPIO_WritePin(SPI_WIFI_CS_PORT,SPI_WIFI_CS_PIN,GPIO_PIN_SET);
 	return M2M_SUCCESS;
 }
 #endif
